@@ -1,0 +1,24 @@
+{
+  "employees": [
+    {
+      "first_name": "penke",
+      "last_name": "srikanth",
+      "address": "pakistan",
+      "phone_number": "8688923999",
+      "dob": "1993-12-12",
+      "country": "China",
+      "email": "srikanth@gmail.com",
+      "id": 8
+    },
+    {
+      "first_name": "penke",
+      "last_name": "srikanth",
+      "address": "pakistan12151993",
+      "phone_number": "9705635321",
+      "dob": "2022-11-09",
+      "country": "China",
+      "email": "srikanth@gmail.com",
+      "id": 9
+    }
+  ]
+}

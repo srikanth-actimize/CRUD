@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Crud</title>
+    <style>
+        table {
+            margin: 0 auto;
+            font-size: large;
+            border: 1px solid black;
+        }
+  
+        h1 {
+            text-align: center;
+            color: #006600;
+            font-size: xx-large;
+            font-family: 'Gill Sans', 
+                'Gill Sans MT', ' Calibri', 
+                'Trebuchet MS', 'sans-serif';
+        }
+  
+        td {
+            background-color: #E4F5D4;
+            border: 1px solid black;
+        }
+  
+        th,
+        td {
+            font-weight: bold;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+  
+        td {
+            font-weight: lighter;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <table>
+           <thead>
+              <tr>
+                 <th>firstname</th>
+                 <th>lastname</th>
+                 <th>email</th>
+              </tr>
+           </thead>
+           <tbody id="data-output">
+              <!-- Prodcuts from javascript file in here. -->
+           </tbody>
+        </table>
+      
+        <!-- <script src="script.js"></script> -->
+        <script>
+            fetch(" http://localhost:3000/employees")
+.then(function(response){
+    console.log("sdfgh",response)
+   return response.json();
+})
+.then(function(employeesList){
+   let placeholder = document.querySelector("#data-output");
+   let out = "";
+   for(let employee of employeesList){
+      out += `
+         <tr>
+            <td>${employee.first_name}</td>
+            <td>${employee.last_name}</td>
+            <td>${employee.email}</td>
+         </tr>
+      `;
+   }
+ 
+   placeholder.innerHTML = out;
+});
+        </script>
+</body>
+</html>
